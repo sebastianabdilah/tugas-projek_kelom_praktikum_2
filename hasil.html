@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Pemesanan Barang</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eeeeee;
+            margin: 0;
+        }
+
+        .browser {
+            width: 700px;
+            margin: 20px auto;
+            border: 2px solid #555;
+            background: white;
+        }
+
+        .browser-header {
+            background: #ccc;
+            padding: 10px;
+            border-bottom: 2px solid #555;
+        }
+
+        .address {
+            display: inline-block;
+            width: 75%;
+            box-sizing: border-box;
+            background: white;
+            border: 1px solid #555;
+            padding: 4px;
+        }
+
+        .container {
+            padding: 20px 35px;
+            background: #eee;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            border: 1px solid #555;
+            padding: 7px 0;
+            margin-bottom: 25px;
+            font-size: 12px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .form-content {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .photo {
+            width: 140px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .photo-box {
+            display: flex;
+            width: 130px;
+            height: 130px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #777;
+            background: white;
+            color: #777;
+            font-size: 11px;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .fields {
+            width: 360px;
+            font-size: 12px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 105px 1fr;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 8px;
+            overflow-wrap: anywhere;
+        }
+
+        .row strong {
+            text-align: right;
+            padding-top: 5px;
+        }
+
+        .nilai {
+            box-sizing: border-box;
+            min-height: 27px;
+            padding: 5px;
+            border: 1px solid #777;
+            background: white;
+            white-space: pre-line;
+        }
+
+        .description {
+            min-height: 75px;
+        }
+
+        .back {
+            display: block;
+            margin: 20px auto 0;
+            padding: 7px 15px;
+            width: fit-content;
+            background: green;
+            color: white;
+            border: 2px solid black;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            background: darkgreen;
+        }
+
+        @media (max-width: 740px) {
+            .browser {
+                width: 95%;
+            }
+
+            .container {
+                padding: 12px;
+            }
+
+            .form-content {
+                flex-wrap: wrap;
+            }
+
+            .fields {
+                width: 100%;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="browser">
+        <div class="browser-header">
+            <strong>← → × ⌂</strong>
+            <span class="address">http://</span>
+        </div>
+
+        <div class="container">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="index.html">Generate Link</a>
+                <a href="#">Transaction History</a>
+                <a href="#">Policy</a>
+                <a href="#">Logout</a>
+            </nav>
+
+            <div class="form-content">
+                <div class="photo">
+                    <div class="photo-box">Foto tidak dipilih</div>
+                </div>
+
+                <div class="fields">
+                    <div class="row">
+                        <strong>Title Here :</strong>
+                        <div class="nilai">-</div>
+                    </div>
+                    <div class="row">
+                        <strong>Description :</strong>
+                        <div class="nilai description">-</div>
+                    </div>
+                    <div class="row">
+                        <strong>Jumlah Transaksi :</strong>
+                        <div class="nilai">-</div>
+                    </div>
+                    <div class="row">
+                        <strong>Total Amount :</strong>
+                        <div class="nilai">-</div>
+                    </div>
+                    <div class="row">
+                        <strong>Bank :</strong>
+                        <div class="nilai">-</div>
+                    </div>
+                    <div class="row">
+                        <strong>Account Holder :</strong>
+                        <div class="nilai">-</div>
+                    </div>
+                    <div class="row">
+                        <strong>Account No :</strong>
+                        <div class="nilai">-</div>
+                    </div>
+                    <div class="row">
+                        <strong>Send to Mobile Phone :</strong>
+                        <div class="nilai">Tidak dipilih</div>
+                    </div>
+                    <div class="row">
+                        <strong>Send to Email :</strong>
+                        <div class="nilai">Tidak dipilih</div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="back" href="index.html">Kembali ke Form</a>
+        </div>
+    </div>
+</body>
+</html>
