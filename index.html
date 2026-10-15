@@ -4,294 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Pemesanan Barang</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #eeeeee;
-            margin: 0;
-        }
-
-        .browser {
-            width: 700px;
-            margin: 20px auto;
-            border: 2px solid #555;
-            background: white;
-        }
-
-        .browser-header {
-            background: #ccc;
-            padding: 10px;
-            border-bottom: 2px solid #555;
-        }
-
-        .address {
-            display: inline-block;
-            width: 75%;
-            background: white;
-            border: 1px solid #555;
-            padding: 4px;
-        }
-
-        .container {
-            padding: 20px 35px;
-            background: #eee;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            background: white;
-            border: 1px solid #555;
-            padding: 7px 0;
-            margin-bottom: 25px;
-            font-size: 12px;
-        }
-
-        nav a {
-            color: black;
-            text-decoration: none;
-        }
-
-        .form-content {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .photo {
-            width: 140px;
-            text-align: center;
-        }
-
-        .photo-box {
-            display: flex;
-            width: 130px;
-            height: 130px;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #777;
-            background-color: white;
-            color: #777;
-            font-size: 11px;
-        }
-
-        .photo-box img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .photo input {
-            width: 140px;
-            font-size: 10px;
-            margin-top: 8px;
-        }
-
-        .fields {
-            width: 360px;
-            font-size: 12px;
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 105px 1fr;
-            align-items: start;
-            gap: 8px;
-            margin-bottom: 8px;
-        }
-
-        .row label {
-            text-align: right;
-            padding-top: 5px;
-        }
-
-        input[type="text"],
-        input[type="number"],
-        input[type="email"],
-        select,
-        textarea {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 5px;
-            border: 1px solid #777;
-        }
-
-        textarea {
-            height: 75px;
-            resize: vertical;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            color: #888;
-        }
-
-        input:focus::placeholder,
-        textarea:focus::placeholder {
-            color: transparent;
-        }
-
-        .checks {
-            margin-left: 113px;
-            margin-bottom: 10px;
-            color: green;
-        }
-
-        .checks label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .note {
-            margin-left: 113px;
-            font-size: 10px;
-            margin-bottom: 10px;
-        }
-
-        .submit {
-            display: block;
-            margin: 20px auto 0;
-            padding: 7px 15px;
-            background: green;
-            color: white;
-            border: 2px solid black;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        @media (max-width: 740px) {
-            .browser {
-                width: 95%;
-            }
-
-            .container {
-                padding: 12px;
-            }
-
-            .form-content {
-                flex-wrap: wrap;
-            }
-
-            .fields {
-                width: 100%;
-            }
-
-            nav {
-                flex-wrap: wrap;
-                gap: 12px;
-            }
-        }
-    </style>
 </head>
-
 <body>
 
-<div class="browser">
-    <div class="browser-header">
-        <strong>← → × ⌂</strong>
-        <span class="address">http://</span>
-    </div>
+    <!-- Menu Navigasi -->
+    <table border="1" width="100%" cellpadding="5">
+        <tr>
+            <td align="center"><a href="#">Home</a></td>
+            <td align="center"><a href="#">Generate Link</a></td>
+            <td align="center"><a href="#">Transaction History</a></td>
+            <td align="center"><a href="#">Policy</a></td>
+            <td align="center"><a href="#">Logout</a></td>
+        </tr>
+    </table>
 
-    <div class="container">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="index.html">Generate Link</a>
-            <a href="#">Transaction History</a>
-            <a href="#">Policy</a>
-            <a href="#">Logout</a>
-        </nav>
+    <br>
 
-        <!-- action="hasil.html" → setelah klik Generate langsung ke halaman hasil -->
-        <form id="formPemesanan" action="hasil.html" method="get">
-            <div class="form-content">
+    <!-- Form Pemesanan Barang -->
+    <form action="praktikum 2_desainuiux_pemweb (2).html" method="get">
+        <table cellpadding="5">
+            <tr>
+                <!-- Kolom kiri: upload gambar -->
+                <td valign="top" width="250">
+                    <img src="Galaxy S23 256GB.jpeg" alt="Foto HP" width="200" height="200">
+                    <br><br>
+                    <label for="picture">Upload Picture</label><br>
+                    <input type="file" id="picture" name="picture" accept="image/*">
+                </td>
 
-                <div class="photo">
-                    <div class="photo-box" id="preview">Pratinjau foto</div>
-                    <input type="file" id="foto" accept="image/*">
-                </div>
-
-                <div class="fields">
-
-                    <div class="row">
-                        <label for="judul">Title Here :</label>
-                        <input type="text" id="judul" name="judul"
-                            placeholder="Contoh: Laptop ASUS ROG" required>
-                    </div>
-
-                    <div class="row">
-                        <label for="deskripsi">Description :</label>
-                        <textarea id="deskripsi" name="deskripsi"
-                            placeholder="Model: ASUS ROG&#10;Kondisi: Baru&#10;Harga: Rp 2.000 atau 800$"
-                            required></textarea>
-                    </div>
-
-                    <div class="row">
-                        <label for="rekening">Account Number :</label>
-                        <input type="text" id="rekening" name="rekening"
-                            placeholder="Masukkan nomor rekening" required>
-                    </div>
-
-                    <div class="row">
-                        <label for="bank">Bank :</label>
-                        <select id="bank" name="bank" required>
-                            <option value="" selected disabled>Pilih bank</option>
-                            <option>HSBC</option>
-                            <option>BCA</option>
-                            <option>BRI</option>
-                            <option>BNI</option>
-                            <option>Mandiri</option>
-                        </select>
-                    </div>
-
-                    <div class="row">
-                        <label for="pemilik">Account Holder :</label>
-                        <input type="text" id="pemilik" name="pemilik"
-                            placeholder="Masukkan nama pemilik rekening" required>
-                    </div>
-
-                    <div class="row">
-                        <label for="transaksi">Transaction :</label>
-                        <input type="number" id="transaksi" name="transaksi"
-                            min="1" max="3" placeholder="Masukkan 1-3" required>
-                    </div>
-
-                    <div class="note">
-                        * If the transaction is for 3 persons,
-                        choose 3 from the drop-down list.
-                    </div>
-
-                    <div class="checks">
-                        <label>
-                            <input type="checkbox" id="sms" name="sms">
-                            Send to Mobile Phone
-                        </label>
-                        <label>
-                            <input type="checkbox" id="emailCheck" name="emailCheck">
-                            Send to Email
-                        </label>
-                    </div>
-
-                    <div class="row">
-                        <label for="telepon">Send to Mobile Phone :</label>
-                        <input type="text" id="telepon" name="telepon"
-                            placeholder="Contoh: 081234567890">
-                    </div>
-
-                    <div class="row">
-                        <label for="email">Send to Email :</label>
-                        <input type="email" id="email" name="email"
-                            placeholder="Contoh: nama@email.com">
-                    </div>
-
-                </div>
-            </div>
-
-            <button class="submit" type="submit">Generate New Link</button>
-        </form>
-    </div>
-</div>
+                <!-- Kolom kanan: isian form -->
+                <td valign="top">
+                    <table cellpadding="5">
+                        <tr>
+                            <td align="right"><label for="title">Title Here :</label></td>
+                            <td><input type="text" id="title" name="title" size="50" value="Samsung Galaxy S23 Rp 8.500.000"></td>
+                        </tr>
+                        <tr>
+                            <td align="right" valign="top"><label for="description">Description :</label></td>
+                            <td>
+                                <textarea id="description" name="description" rows="5" cols="52">Year : 2023
+Model : Galaxy S23 256GB
+Condition : Mint</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="account_number">Account Number :</label></td>
+                            <td><input type="text" id="account_number" name="account_number" size="50" value="123-456-789-0"></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="bank">Bank :</label></td>
+                            <td>
+                                <select id="bank" name="bank">
+                                    <option value="hsbc" selected>HSBC</option>
+                                    <option value="bca">BCA</option>
+                                    <option value="bni">BNI</option>
+                                    <option value="bri">BRI</option>
+                                    <option value="mandiri">Mandiri</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="account_holder">Account Holder :</label></td>
+                            <td><input type="text" id="account_holder" name="account_holder" size="50" placeholder="Name Here"></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="transaction">Transaction :</label></td>
+                            <td>
+                                <select id="transaction" name="transaction">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <br>
+                                <small>* If the transaction is for 3 person, choose 3 from the drop-down list</small>
+                                <br>
+                                <input type="checkbox" id="send_mobile" name="send_mobile" value="yes" checked>
+                                <label for="send_mobile">Send to Mobile Phone</label>
+                                <br>
+                                <input type="checkbox" id="send_email" name="send_email" value="yes" checked>
+                                <label for="send_email">Send to Email</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="mobile_phone">Send to Mobile Phone :</label></td>
+                            <td><input type="text" id="mobile_phone" name="mobile_phone" size="50" value="1234567890, 1234567891"></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="email">Send to Email :</label></td>
+                            <td><input type="text" id="email" name="email" size="50" value="abdilah825@soton.ac.uk, fys_06@yahoo.com"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button type="submit">Generate Nabr Link</button></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
 
 </body>
 </html>
