@@ -4,223 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Pemesanan Barang</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #eeeeee;
-            margin: 0;
-        }
-
-        .browser {
-            width: 700px;
-            margin: 20px auto;
-            border: 2px solid #555;
-            background: white;
-        }
-
-        .browser-header {
-            background: #ccc;
-            padding: 10px;
-            border-bottom: 2px solid #555;
-        }
-
-        .address {
-            display: inline-block;
-            width: 75%;
-            box-sizing: border-box;
-            background: white;
-            border: 1px solid #555;
-            padding: 4px;
-        }
-
-        .container {
-            padding: 20px 35px;
-            background: #eee;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            background: white;
-            border: 1px solid #555;
-            padding: 7px 0;
-            margin-bottom: 25px;
-            font-size: 12px;
-        }
-
-        nav a {
-            color: black;
-            text-decoration: none;
-        }
-
-        .form-content {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .photo {
-            width: 140px;
-            flex-shrink: 0;
-            text-align: center;
-        }
-
-        .photo-box {
-            display: flex;
-            width: 130px;
-            height: 130px;
-            box-sizing: border-box;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #777;
-            background: white;
-            color: #777;
-            font-size: 11px;
-        }
-
-        .photo-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .fields {
-            width: 360px;
-            font-size: 12px;
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 105px 1fr;
-            align-items: start;
-            gap: 8px;
-            margin-bottom: 8px;
-            overflow-wrap: anywhere;
-        }
-
-        .row strong {
-            text-align: right;
-            padding-top: 5px;
-        }
-
-        .nilai {
-            box-sizing: border-box;
-            min-height: 27px;
-            padding: 5px;
-            border: 1px solid #777;
-            background: white;
-            white-space: pre-line;
-        }
-
-        .description {
-            min-height: 75px;
-        }
-
-        .back {
-            display: block;
-            margin: 20px auto 0;
-            padding: 7px 15px;
-            width: fit-content;
-            background: green;
-            color: white;
-            border: 2px solid black;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .back:hover {
-            background: darkgreen;
-        }
-
-        @media (max-width: 740px) {
-            .browser {
-                width: 95%;
-            }
-
-            .container {
-                padding: 12px;
-            }
-
-            .form-content {
-                flex-wrap: wrap;
-            }
-
-            .fields {
-                width: 100%;
-            }
-
-            nav {
-                flex-wrap: wrap;
-                gap: 12px;
-            }
-        }
-    </style>
 </head>
-
 <body>
-    <div class="browser">
-        <div class="browser-header">
-            <strong>← → × ⌂</strong>
-            <span class="address">http://</span>
-        </div>
 
-        <div class="container">
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="index.html">Generate Link</a>
-                <a href="#">Transaction History</a>
-                <a href="#">Policy</a>
-                <a href="#">Logout</a>
-            </nav>
+    <!-- Menu Navigasi -->
+    <table border="1" width="100%" cellpadding="5">
+        <tr>
+            <td align="center"><a href="#">Home</a></td>
+            <td align="center"><a href="#">Register</a></td>
+            <td align="center"><a href="#">Policy</a></td>
+            <td align="center"><a href="#">About</a></td>
+        </tr>
+    </table>
 
-            <div class="form-content">
-                <div class="photo">
-                    <div class="photo-box">Foto tidak dipilih</div>
-                </div>
+    <br>
 
-                <div class="fields">
-                    <div class="row">
-                        <strong>Title Here :</strong>
-                        <div class="nilai">-</div>
-                    </div>
-                    <div class="row">
-                        <strong>Description :</strong>
-                        <div class="nilai description">-</div>
-                    </div>
-                    <div class="row">
-                        <strong>Jumlah Transaksi :</strong>
-                        <div class="nilai">-</div>
-                    </div>
-                    <div class="row">
-                        <strong>Total Amount :</strong>
-                        <div class="nilai">-</div>
-                    </div>
-                    <div class="row">
-                        <strong>Bank :</strong>
-                        <div class="nilai">-</div>
-                    </div>
-                    <div class="row">
-                        <strong>Account Holder :</strong>
-                        <div class="nilai">-</div>
-                    </div>
-                    <div class="row">
-                        <strong>Account No :</strong>
-                        <div class="nilai">-</div>
-                    </div>
-                    <div class="row">
-                        <strong>Send to Mobile Phone :</strong>
-                        <div class="nilai">Tidak dipilih</div>
-                    </div>
-                    <div class="row">
-                        <strong>Send to Email :</strong>
-                        <div class="nilai">Tidak dipilih</div>
-                    </div>
-                </div>
-            </div>
+    <!-- Form Hasil Pemesanan Barang -->
+    <form action="#" method="post">
+        <table cellpadding="5">
+            <tr>
+                <!-- Kolom kiri: gambar barang -->
+                <td valign="top" width="250">
+                    <img src="Galaxy S23 256GB.jpeg" alt="Foto HP" width="200" height="200">
+                </td>
 
-            <a class="back" href="index.html">Kembali ke Form</a>
-        </div>
-    </div>
+                <!-- Kolom kanan: detail pembayaran -->
+                <td valign="top">
+                    <table cellpadding="5">
+                        <tr>
+                            <td align="right">Title Here :</td>
+                            <td>Samsung Galaxy S23 Rp 8.500.000</td>
+                        </tr>
+                        <tr>
+                            <td align="right" valign="top">Description :</td>
+                            <td>
+                                Year : 2023<br>
+                                Model : Galaxy S23 256GB<br>
+                                Condition : Mint
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">Total Amount :</td>
+                            <td>Rp 8.500.000</td>
+                        </tr>
+                        <tr>
+                            <td align="right">Pay to :</td>
+                            <td>123-456-789-0</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="payment_type">Payment Type :</label></td>
+                            <td>
+                                <select id="payment_type" name="payment_type">
+                                    <option value="visa_debit" selected>Visa Debit</option>
+                                    <option value="visa_credit">Visa Credit</option>
+                                    <option value="mastercard">Mastercard</option>
+                                    <option value="paypal">PayPal</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="account_holder">Account Holder :</label></td>
+                            <td><input type="text" id="account_holder" name="account_holder" size="50" placeholder="Name Here"></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="account_no">Account No :</label></td>
+                            <td>
+                                <input type="text" id="account_no" name="account_no" size="50" value="123-456-789-0">
+                                <br>
+                                <input type="checkbox" id="send_mobile" name="send_mobile" value="yes" checked>
+                                <label for="send_mobile">Send to Mobile Phone</label>
+                                <br>
+                                <input type="checkbox" id="send_email" name="send_email" value="yes" checked>
+                                <label for="send_email">Email me copy of transaction</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="mobile_phone">Send to Mobile Phone :</label></td>
+                            <td><input type="text" id="mobile_phone" name="mobile_phone" size="50" value="1234567890, 1234567891"></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="email">Send to Email :</label></td>
+                            <td><input type="text" id="email" name="email" size="50" value="abdilah825@soton.ac.uk, fys_06@yahoo.com"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button type="submit">Pay using QuidLink</button></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <hr>
+
 </body>
 </html>
